@@ -3,7 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Beba 💗 Betu</title>
+
+<!-- 🌸 Browser tab title -->
+<title>💗 Betu × Beba 🌍💫</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&family=Playfair+Display:wght@500&display=swap" rel="stylesheet">
 
@@ -40,12 +42,33 @@ body {
     z-index: 1;
 }
 
-/* title */
+/* ✨ Animated title */
 h1 {
     text-align: center;
     font-family: 'Playfair Display', serif;
     color: #ff4d6d;
     margin-top: 30px;
+    font-size: 2rem;
+    text-shadow: 0 0 10px rgba(255, 77, 109, 0.4);
+}
+
+.glow {
+    animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+    from { text-shadow: 0 0 10px #ff4d6d; }
+    to { text-shadow: 0 0 25px #ff4d6d; }
+}
+
+/* heartbeat */
+.heartbeat {
+    display: inline-block;
+    animation: beat 1.2s infinite;
+}
+
+@keyframes beat {
+    50% { transform: scale(1.2); }
 }
 
 /* subtitle */
@@ -74,7 +97,7 @@ h1 {
 h2 { text-align: center; color: #ff4d6d; }
 li { margin: 8px 0; }
 
-/* 💖 hearts ABOVE */
+/* hearts */
 .particle {
     position: fixed;
     bottom: -10px;
@@ -82,7 +105,6 @@ li { margin: 8px 0; }
     opacity: 0.5;
     animation: rise 10s linear infinite;
     z-index: 5;
-    pointer-events: none;
 }
 
 @keyframes rise {
@@ -145,8 +167,9 @@ li { margin: 8px 0; }
 
 <div id="mainContent" class="main">
 
-<h1 id="title"></h1>
-<p class="subtitle">our world, just us 💗</p>
+<!-- 💗 Animated title -->
+<h1 class="glow" id="title"></h1>
+<p class="subtitle">our little world 💗</p>
 
 <div class="container">
 
@@ -200,13 +223,13 @@ li { margin: 8px 0; }
 <!-- popup -->
 <div id="popup">
     <div class="popup-box">
-        💌 I LOVE YOU <span class="pulse">BETUUU 💗🌍</span><br>🥺💞
+        💌 I LOVE YOU <span class="pulse">BETUUU 💗🌍</span>
     </div>
 </div>
 
 <script>
-// typing
-const text="💗 Beba & Betu 💗";
+// typing title
+const text="💗 Our Little World 🌍";
 let i=0;
 (function type(){
  if(i<text.length){
@@ -215,7 +238,7 @@ let i=0;
  }
 })();
 
-// popup
+// popup (2 sec delay)
 document.addEventListener("DOMContentLoaded",()=>{
  let popup=document.getElementById("popup");
  let main=document.getElementById("mainContent");
@@ -223,12 +246,12 @@ document.addEventListener("DOMContentLoaded",()=>{
  setTimeout(()=>{
   popup.classList.add("show");
   main.classList.add("blur");
- },800);
+ },500);
 
  setTimeout(()=>{
   popup.classList.remove("show");
   main.classList.remove("blur");
- },4000);
+ },2500); // 2 seconds visible
 });
 
 // hearts
