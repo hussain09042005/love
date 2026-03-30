@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- 🌸 Browser tab title -->
-<title>💗 Betu × Beba 🌍💫</title>
+<!-- 🌸 Styled Browser Title -->
+<title>🌸 Beba 🖤 Betu 🌍✨</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&family=Playfair+Display:wght@500&display=swap" rel="stylesheet">
 
@@ -42,7 +42,7 @@ body {
     z-index: 1;
 }
 
-/* ✨ Animated title */
+/* animated title */
 h1 {
     text-align: center;
     font-family: 'Playfair Display', serif;
@@ -59,16 +59,6 @@ h1 {
 @keyframes glow {
     from { text-shadow: 0 0 10px #ff4d6d; }
     to { text-shadow: 0 0 25px #ff4d6d; }
-}
-
-/* heartbeat */
-.heartbeat {
-    display: inline-block;
-    animation: beat 1.2s infinite;
-}
-
-@keyframes beat {
-    50% { transform: scale(1.2); }
 }
 
 /* subtitle */
@@ -97,7 +87,7 @@ h1 {
 h2 { text-align: center; color: #ff4d6d; }
 li { margin: 8px 0; }
 
-/* hearts */
+/* hearts above */
 .particle {
     position: fixed;
     bottom: -10px;
@@ -105,6 +95,7 @@ li { margin: 8px 0; }
     opacity: 0.5;
     animation: rise 10s linear infinite;
     z-index: 5;
+    pointer-events: none;
 }
 
 @keyframes rise {
@@ -167,14 +158,14 @@ li { margin: 8px 0; }
 
 <div id="mainContent" class="main">
 
-<!-- 💗 Animated title -->
+<!-- animated title -->
 <h1 class="glow" id="title"></h1>
-<p class="subtitle">our little world 💗</p>
+<p class="subtitle">🌸 Beba × 🖤 Betu 🌍✨</p>
 
 <div class="container">
 
 <div class="card">
-<h2>💌 Beba’s Wishlist 💗</h2>
+<h2>🌸 Beba’s Wishlist 💗</h2>
 <ul>
 <li>Warm hugs 🤍</li>
 <li>Beach walks 🌊</li>
@@ -196,7 +187,7 @@ li { margin: 8px 0; }
 </div>
 
 <div class="card">
-<h2>🤍 Betu’s Wishlist 💗</h2>
+<h2>🖤 Betu’s Wishlist ✨</h2>
 <ul>
 <li>Kiss note in phone cover 📱💋</li>
 <li>Handkerchief with kisses 🤍</li>
@@ -229,7 +220,7 @@ li { margin: 8px 0; }
 
 <script>
 // typing title
-const text="💗 Our Little World 🌍";
+const text="🌸 Beba × 🖤 Betu 🌍✨";
 let i=0;
 (function type(){
  if(i<text.length){
@@ -238,7 +229,7 @@ let i=0;
  }
 })();
 
-// popup (2 sec delay)
+// popup (2 sec visible)
 document.addEventListener("DOMContentLoaded",()=>{
  let popup=document.getElementById("popup");
  let main=document.getElementById("mainContent");
@@ -251,7 +242,7 @@ document.addEventListener("DOMContentLoaded",()=>{
  setTimeout(()=>{
   popup.classList.remove("show");
   main.classList.remove("blur");
- },2500); // 2 seconds visible
+ },2500);
 });
 
 // hearts
