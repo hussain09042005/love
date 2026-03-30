@@ -15,7 +15,13 @@ body {
     overflow-x: hidden;
 }
 
-/* glowing blobs */
+/* BLUR */
+.blur {
+    filter: blur(8px);
+    transition: 0.6s;
+}
+
+/* blobs */
 .blob {
     position: fixed;
     width: 300px;
@@ -24,37 +30,28 @@ body {
     filter: blur(120px);
     opacity: 0.5;
     z-index: 0;
-    animation: float 12s infinite ease-in-out;
 }
 .blob1 { background:#ff9eb5; top:-50px; left:-50px; }
 .blob2 { background:#ffc1cc; bottom:-50px; right:-50px; }
 
-@keyframes float {
-    0%,100% { transform: translateY(0); }
-    50% { transform: translateY(40px); }
-}
-
-/* content */
+/* main */
 .main {
     position: relative;
     z-index: 1;
 }
 
-/* typing title */
+/* title */
 h1 {
     text-align: center;
     font-family: 'Playfair Display', serif;
     color: #ff4d6d;
     margin-top: 30px;
-    font-size: 2rem;
 }
 
 /* subtitle */
 .subtitle {
     text-align: center;
     color: #666;
-    font-size: 13px;
-    margin-bottom: 20px;
 }
 
 /* cards */
@@ -63,7 +60,6 @@ h1 {
     flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
-    padding: 10px;
 }
 
 .card {
@@ -73,30 +69,21 @@ h1 {
     backdrop-filter: blur(25px);
     border-radius: 20px;
     padding: 20px;
-    box-shadow: 0 15px 40px rgba(255, 0, 100, 0.15);
-    transition: 0.4s;
+    z-index: 1;
 }
 
-.card:hover {
-    transform: translateY(-8px);
-}
+h2 { text-align: center; color: #ff4d6d; }
+li { margin: 8px 0; }
 
-h2 {
-    text-align: center;
-    color: #ff4d6d;
-}
-
-li {
-    margin: 8px 0;
-}
-
-/* soft floating particles */
+/* 💖 HEARTS ABOVE EVERYTHING */
 .particle {
     position: fixed;
     bottom: -10px;
-    font-size: 12px;
-    opacity: 0.3;
-    animation: rise 12s linear infinite;
+    font-size: 14px;
+    opacity: 0.5;
+    animation: rise 10s linear infinite;
+    z-index: 5; /* 🔥 IMPORTANT */
+    pointer-events: none;
 }
 
 @keyframes rise {
@@ -104,16 +91,16 @@ li {
     100% { transform: translateY(-100vh); }
 }
 
-/* popup cinematic */
+/* popup */
 #popup {
     position: fixed;
     inset: 0;
-    background: rgba(255,255,255,0.6);
-    backdrop-filter: blur(8px);
+    background: rgba(255,255,255,0.4);
+    backdrop-filter: blur(10px);
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 999;
+    z-index: 999; /* always top */
     opacity: 0;
     pointer-events: none;
     transition: 0.6s;
@@ -125,26 +112,30 @@ li {
     border-radius: 20px;
     text-align: center;
     font-size: 1.4rem;
-    box-shadow: 0 20px 60px rgba(255,0,100,0.2);
-    transform: scale(0.8);
-    animation: popupAnim 0.6s forwards;
+    box-shadow: 0 20px 60px rgba(255,0,100,0.25);
+    transform: scale(0.7);
+    opacity: 0;
+    transition: 0.6s;
 }
 
-@keyframes popupAnim {
-    to { transform: scale(1); }
+#popup.show {
+    opacity: 1;
+    pointer-events: auto;
 }
 
-/* pulse text */
+#popup.show .popup-box {
+    transform: scale(1);
+    opacity: 1;
+}
+
 .pulse {
     color: #ff4d6d;
     animation: pulse 1.2s infinite;
 }
 
 @keyframes pulse {
-    0%,100% { transform: scale(1); }
     50% { transform: scale(1.15); }
 }
-
 </style>
 </head>
 
@@ -153,10 +144,10 @@ li {
 <div class="blob blob1"></div>
 <div class="blob blob2"></div>
 
-<div class="main">
+<div id="mainContent" class="main">
 
 <h1 id="title"></h1>
-<p class="subtitle">our world, just us 💗</p>
+<p class="subtitle">our world 💗</p>
 
 <div class="container">
 
@@ -173,12 +164,6 @@ li {
 <li>Ice cream dates 🍦</li>
 <li>Holding hands 🤝</li>
 <li>“I miss you” texts 💬</li>
-<li>Surprise visits 😍</li>
-<li>Matching outfits 👗👕</li>
-<li>Watching sunsets 🌅</li>
-<li>Sharing headphones 🎧</li>
-<li>Forehead kisses 😘</li>
-<li>Being called “mine” 😌🖤</li>
 </ul>
 </div>
 
@@ -186,19 +171,12 @@ li {
 <h2>🤍 Betu’s Wishlist 💗</h2>
 <ul>
 <li>Kiss note in phone cover 📱💋</li>
-<li>Handkerchief with kisses 🤍</li>
 <li>Tight hugs 🫂</li>
 <li>Late-night talks 🌙</li>
 <li>Photoshoots together 📸</li>
 <li>Holding hands 🤝</li>
-<li>Shoulder to rest on 💤</li>
 <li>Voice notes 🎙️</li>
-<li>“Take care” messages 🫶</li>
-<li>Matching bracelets ⛓️</li>
 <li>Watching movies 🎬</li>
-<li>Feeding each other 🍫</li>
-<li>Soft cheek kisses 😘</li>
-<li>Laughing together 😂</li>
 <li>Being her safe place 🤍</li>
 </ul>
 </div>
@@ -210,12 +188,12 @@ li {
 <!-- popup -->
 <div id="popup">
     <div class="popup-box">
-        💌 I LOVE YOU <span class="pulse">BETUUU 💗🌍</span><br>🥺💞
+        💌 I LOVE YOU <span class="pulse">BETUUU 💗🌍</span>
     </div>
 </div>
 
 <script>
-// typing title
+// typing
 const text="💗 Beba & Betu 💗";
 let i=0;
 (function type(){
@@ -227,27 +205,29 @@ let i=0;
 
 // popup
 document.addEventListener("DOMContentLoaded",()=>{
- setTimeout(()=>{
-  let p=document.getElementById("popup");
-  p.style.opacity="1";
-  p.style.pointerEvents="auto";
- },1200);
+ let popup=document.getElementById("popup");
+ let main=document.getElementById("mainContent");
 
- document.getElementById("popup").onclick=function(){
-  this.style.opacity="0";
-  this.style.pointerEvents="none";
- };
+ setTimeout(()=>{
+  popup.classList.add("show");
+  main.classList.add("blur");
+ },800);
+
+ setTimeout(()=>{
+  popup.classList.remove("show");
+  main.classList.remove("blur");
+ },4000);
 });
 
-// particles
+// 💖 hearts above cards
 setInterval(()=>{
  let p=document.createElement("div");
  p.className="particle";
  p.innerHTML="💕";
  p.style.left=Math.random()*100+"vw";
  document.body.appendChild(p);
- setTimeout(()=>p.remove(),12000);
-},1200);
+ setTimeout(()=>p.remove(),10000);
+},900);
 </script>
 
 </body>
