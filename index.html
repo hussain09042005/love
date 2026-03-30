@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Beba 💗 Betu Wishlist</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&family=Pacifico&display=swap" rel="stylesheet">
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(-45deg, #ff9a9e, #fad0c4, #ffdde1, #ee9ca7);
+    background-size: 400% 400%;
+    animation: gradientBG 10s ease infinite;
+    overflow-x: hidden;
+}
+
+/* Background Animation */
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Title */
+h1 {
+    text-align: center;
+    font-family: 'Pacifico', cursive;
+    color: white;
+    margin-top: 30px;
+    font-size: 2.5rem;
+}
+
+/* Layout */
+.container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+    padding: 20px;
+}
+
+/* Cards */
+.card {
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(15px);
+    border-radius: 25px;
+    padding: 20px;
+    width: 300px;
+    box-shadow: 0 8px 32px rgba(255, 0, 100, 0.3);
+    border: 1px solid rgba(255,255,255,0.3);
+    transition: 0.4s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 15px 40px rgba(255, 0, 100, 0.6);
+}
+
+h2 {
+    text-align: center;
+    color: #ff4d6d;
+}
+
+li {
+    margin: 8px 0;
+    transition: 0.3s;
+}
+
+li:hover {
+    transform: scale(1.05);
+    color: #ff4d6d;
+}
+
+/* Floating Hearts */
+.heart {
+    position: fixed;
+    bottom: -10px;
+    font-size: 20px;
+    animation: floatUp 6s linear infinite;
+    opacity: 0.7;
+}
+
+@keyframes floatUp {
+    0% { transform: translateY(0); opacity: 0.8; }
+    100% { transform: translateY(-100vh); opacity: 0; }
+}
+
+/* Cursor Sparkle */
+.sparkle {
+    position: fixed;
+    pointer-events: none;
+    font-size: 15px;
+    animation: sparkleFade 1s linear forwards;
+}
+
+@keyframes sparkleFade {
+    0% { opacity: 1; transform: scale(1); }
+    100% { opacity: 0; transform: scale(2); }
+}
+
+/* Popup */
+#lovePopup {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.5s;
+}
+
+.popup-content {
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    font-size: 1.6rem;
+    text-align: center;
+    box-shadow: 0 10px 40px rgba(255, 0, 100, 0.6);
+    animation: pop 0.6s ease;
+}
+
+/* Heartbeat Text */
+.heartbeat {
+    animation: beat 1s infinite;
+    display: inline-block;
+}
+
+@keyframes beat {
+    0% { transform: scale(1); }
+    25% { transform: scale(1.2); }
+    40% { transform: scale(1); }
+    60% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+@keyframes pop {
+    0% { transform: scale(0.5); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+</style>
+</head>
+
+<body>
+
+<h1 id="typing"></h1>
+
+<div class="container">
+
+<div class="card">
+<h2>💌 Shahista’s Wishlist</h2>
+<ul>
+<li>Warm hugs 🤍</li>
+<li>Beach walks 🌊</li>
+<li>Late night talks 🌙</li>
+<li>Gift exchange 🎁</li>
+<li>Sleeping in your lap 💤</li>
+<li>Being held in your arms 🤍</li>
+<li>Cute photoshoots 📸</li>
+<li>Ice cream dates 🍦</li>
+<li>Holding hands 🤝</li>
+<li>“I miss you” texts 💬</li>
+<li>Surprise visits 😍</li>
+<li>Matching outfits 👗👕</li>
+<li>Watching sunsets 🌅</li>
+<li>Sharing headphones 🎧</li>
+<li>Forehead kisses 😘</li>
+<li>Being called “mine” 😌🖤</li>
+</ul>
+</div>
+
+<div class="card">
+<h2>🤍 Hussain’s Wishlist</h2>
+<ul>
+<li>Kiss note in phone cover 📱💋</li>
+<li>Handkerchief with kisses 🤍</li>
+<li>Tight hugs 🫂</li>
+<li>Late-night talks 🌙</li>
+<li>Photoshoots together 📸</li>
+<li>Holding hands 🤝</li>
+<li>Shoulder to rest on 💤</li>
+<li>Voice notes 🎙️</li>
+<li>“Take care” messages 🫶</li>
+<li>Matching bracelets ⛓️</li>
+<li>Watching movies 🎬</li>
+<li>Feeding each other 🍫</li>
+<li>Soft cheek kisses 😘</li>
+<li>Laughing together 😂</li>
+<li>Being her safe place 🤍</li>
+</ul>
+</div>
+
+</div>
+
+<!-- Popup -->
+<div id="lovePopup">
+    <div class="popup-content">
+        💌 I LOVE YOU <span class="heartbeat">BEBA 💗🌍</span> <br>
+        🥺💞🫶✨💖🌸
+    </div>
+</div>
+
+<!-- Music -->
+<audio autoplay loop>
+    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+// Typing
+const text = "💗 Beba 🌍 & Betu 🌍 Wishlist 💗";
+let i = 0;
+function typeEffect() {
+    if (i < text.length) {
+        document.getElementById("typing").innerHTML += text.charAt(i);
+        i++;
+        setTimeout(typeEffect, 80);
+    }
+}
+typeEffect();
+
+// Floating Hearts
+function createHeart() {
+    const heart = document.createElement("div");
+    heart.classList.add("heart");
+    heart.innerHTML = "💖";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.fontSize = (15 + Math.random() * 20) + "px";
+    heart.style.animationDuration = (4 + Math.random() * 3) + "s";
+    document.body.appendChild(heart);
+    setTimeout(() => heart.remove(), 6000);
+}
+setInterval(createHeart, 300);
+
+// Popup
+window.onload = function() {
+    setTimeout(() => {
+        const popup = document.getElementById("lovePopup");
+        popup.style.opacity = "1";
+        popup.style.pointerEvents = "auto";
+    }, 1200);
+
+    document.getElementById("lovePopup").onclick = function() {
+        this.style.opacity = "0";
+        this.style.pointerEvents = "none";
+    };
+};
+
+// Sparkle Cursor
+document.addEventListener("mousemove", function(e) {
+    const sparkle = document.createElement("div");
+    sparkle.classList.add("sparkle");
+    sparkle.innerHTML = "✨";
+    sparkle.style.left = e.clientX + "px";
+    sparkle.style.top = e.clientY + "px";
+    document.body.appendChild(sparkle);
+    setTimeout(() => sparkle.remove(), 1000);
+});
+</script>
+
+</body>
+</html>
