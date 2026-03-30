@@ -76,7 +76,7 @@ li {
     margin: 8px 0;
 }
 
-/* Floating hearts (SOFT) */
+/* Floating hearts */
 .heart {
     position: fixed;
     bottom: -10px;
@@ -211,7 +211,7 @@ li {
 </audio>
 
 <script>
-// typing
+// Typing effect
 const text="💗 Beba 🌍 & Betu 🌍 Wishlist 💗";
 let i=0;
 (function type(){
@@ -221,21 +221,21 @@ let i=0;
  }
 })();
 
-// popup
-window.onload=()=>{
- setTimeout(()=>{
-  let p=document.getElementById("lovePopup");
-  p.style.opacity="1";
-  p.style.pointerEvents="auto";
- },1200);
+// POPUP FIXED
+document.addEventListener("DOMContentLoaded", function () {
+    setTimeout(() => {
+        const popup = document.getElementById("lovePopup");
+        popup.style.opacity = "1";
+        popup.style.pointerEvents = "auto";
+    }, 1200);
 
- document.getElementById("lovePopup").onclick=function(){
-  this.style.opacity="0";
-  this.style.pointerEvents="none";
- };
-};
+    document.getElementById("lovePopup").addEventListener("click", function () {
+        this.style.opacity = "0";
+        this.style.pointerEvents = "none";
+    });
+});
 
-// hearts (slow & soft)
+// Hearts
 setInterval(()=>{
  let h=document.createElement("div");
  h.className="heart";
@@ -245,7 +245,7 @@ setInterval(()=>{
  setTimeout(()=>h.remove(),8000);
 },700);
 
-// music
+// Music
 function playMusic(){
  document.getElementById("bgMusic").play();
 }
