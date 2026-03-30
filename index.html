@@ -15,7 +15,7 @@ body {
     overflow-x: hidden;
 }
 
-/* BLUR */
+/* blur */
 .blur {
     filter: blur(8px);
     transition: 0.6s;
@@ -69,25 +69,23 @@ h1 {
     backdrop-filter: blur(25px);
     border-radius: 20px;
     padding: 20px;
-    z-index: 1;
 }
 
 h2 { text-align: center; color: #ff4d6d; }
 li { margin: 8px 0; }
 
-/* 💖 HEARTS ABOVE EVERYTHING */
+/* 💖 hearts ABOVE */
 .particle {
     position: fixed;
     bottom: -10px;
     font-size: 14px;
     opacity: 0.5;
     animation: rise 10s linear infinite;
-    z-index: 5; /* 🔥 IMPORTANT */
+    z-index: 5;
     pointer-events: none;
 }
 
 @keyframes rise {
-    0% { transform: translateY(0); }
     100% { transform: translateY(-100vh); }
 }
 
@@ -100,7 +98,7 @@ li { margin: 8px 0; }
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 999; /* always top */
+    z-index: 999;
     opacity: 0;
     pointer-events: none;
     transition: 0.6s;
@@ -128,6 +126,7 @@ li { margin: 8px 0; }
     opacity: 1;
 }
 
+/* pulse */
 .pulse {
     color: #ff4d6d;
     animation: pulse 1.2s infinite;
@@ -147,7 +146,7 @@ li { margin: 8px 0; }
 <div id="mainContent" class="main">
 
 <h1 id="title"></h1>
-<p class="subtitle">our world 💗</p>
+<p class="subtitle">our world, just us 💗</p>
 
 <div class="container">
 
@@ -164,6 +163,12 @@ li { margin: 8px 0; }
 <li>Ice cream dates 🍦</li>
 <li>Holding hands 🤝</li>
 <li>“I miss you” texts 💬</li>
+<li>Surprise visits 😍</li>
+<li>Matching outfits 👗👕</li>
+<li>Watching sunsets 🌅</li>
+<li>Sharing headphones 🎧</li>
+<li>Forehead kisses 😘</li>
+<li>Being called “mine” 😌🖤</li>
 </ul>
 </div>
 
@@ -171,12 +176,19 @@ li { margin: 8px 0; }
 <h2>🤍 Betu’s Wishlist 💗</h2>
 <ul>
 <li>Kiss note in phone cover 📱💋</li>
+<li>Handkerchief with kisses 🤍</li>
 <li>Tight hugs 🫂</li>
 <li>Late-night talks 🌙</li>
 <li>Photoshoots together 📸</li>
 <li>Holding hands 🤝</li>
+<li>Shoulder to rest on 💤</li>
 <li>Voice notes 🎙️</li>
+<li>“Take care” messages 🫶</li>
+<li>Matching bracelets ⛓️</li>
 <li>Watching movies 🎬</li>
+<li>Feeding each other 🍫</li>
+<li>Soft cheek kisses 😘</li>
+<li>Laughing together 😂</li>
 <li>Being her safe place 🤍</li>
 </ul>
 </div>
@@ -188,7 +200,7 @@ li { margin: 8px 0; }
 <!-- popup -->
 <div id="popup">
     <div class="popup-box">
-        💌 I LOVE YOU <span class="pulse">BETUUU 💗🌍</span>
+        💌 I LOVE YOU <span class="pulse">BETUUU 💗🌍</span><br>🥺💞
     </div>
 </div>
 
@@ -219,7 +231,7 @@ document.addEventListener("DOMContentLoaded",()=>{
  },4000);
 });
 
-// 💖 hearts above cards
+// hearts
 setInterval(()=>{
  let p=document.createElement("div");
  p.className="particle";
